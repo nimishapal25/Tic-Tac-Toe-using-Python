@@ -53,11 +53,10 @@ def matrix_mul():
                 idx_col += 1
                 print("*******************", sum_of_rc)
                 matrix_AB.append(sum_of_rc)
-            print("*******************", matrix_AB)
-            return matrix_AB
+        print("*******************", matrix_AB)
+        return matrix_AB
     else:
-        print('Invalid matrix')
-        return -1
+        return 'Invalid Matrix'
 
 
 print('Matrix Multiplication is: ', matrix_mul())
