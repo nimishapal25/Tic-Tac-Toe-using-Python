@@ -1,5 +1,5 @@
 import random
-# change
+# chang
 answer = random.randint(1, 10)
 print(answer)
 userInput = 0
