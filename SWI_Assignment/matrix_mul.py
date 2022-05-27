@@ -39,36 +39,19 @@ print()
 
 
 def matrix_mul():
-    if num_columns_A == num_row_B:
-        for row in matrix_A:
-            idx_col = 0
-            for i in range(len(matrix_B[0])):
-                idx_row = 0
-                sum_of_rc = 0
-                for column in matrix_B:
-                    print(column[idx_col])
-                    print(row[idx_row])
-                    sum_of_rc += row[idx_row] * column[idx_col]
-                    print()
-                    idx_row += 1
-                idx_col += 1
-                print("*******************", sum_of_rc)
-                matrix_AB.append(sum_of_rc)
-        print("*******************", matrix_AB)
-        return matrix_AB
-    else:
+    if num_columns_A != num_row_B:
         return 'Invalid Matrix'
+    for row in matrix_A:
+        for idx_col, _ in enumerate(range(len(matrix_B[0]))):
+            sum_of_rc = 0
+            for idx_row, column in enumerate(matrix_B):
+                print(f'{column[idx_col]} | {row[idx_row]}\n')
+                sum_of_rc += row[idx_row] * column[idx_col]
+            print("*******************", sum_of_rc)
+            matrix_AB.append(sum_of_rc)
+    print("*******************", matrix_AB)
+
+    return matrix_AB
 
 
 print('Matrix Multiplication is: ', matrix_mul())
-
-
-
-
-
-
-
-
-
-
-
