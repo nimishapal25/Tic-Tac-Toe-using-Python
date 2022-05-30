@@ -18,17 +18,12 @@ def cosine_similarity(v1, v2):
         cosine_distance_lst.append(cosine_distance)
 
     cosine_distance_dict = dict(zip(v1, cosine_distance_lst))
-    cosine_distance_dict_order = sorted(cosine_distance_dict.items(), key=lambda xc: xc[1])
-    return cosine_distance_dict_order
+    return sorted(cosine_distance_dict.items(), key=lambda xc: xc[1])
 
 
 def five_closest_points():
-    five_closest_points_lst = []
     cosine_lst = cosine_similarity(S, P)
-    for idx, i in enumerate(cosine_lst):
-        if idx < 5:
-            five_closest_points_lst.append(i[0])
-    return five_closest_points_lst
+    return [i[0] for idx, i in enumerate(cosine_lst) if idx < 5]
 
 
 print(five_closest_points())
